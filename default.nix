@@ -5,5 +5,11 @@
   modules = import ./modules;
   overlays = import ./overlays;
 
-sundials2 = pkgs.callPackage ./pkgs/sundials2 { };
+  astrochem = pkgs.pythonPackages.toPythonModule (
+     pkgs.callPackage ./pkgs/astrochem {
+       inherit (pkgs) pythonPackages;
+       sundials = pkgs.callPackage ./pkgs/sundials2 { };
+     }
+  );
+  sundials2 = pkgs.callPackage ./pkgs/sundials2 { };
 }
