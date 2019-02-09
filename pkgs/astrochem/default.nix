@@ -26,4 +26,6 @@ stdenv.mkDerivation rec {
   ];
 
   preConfigure = "./bootstrap";
+
+  doCheck = true;
 }
