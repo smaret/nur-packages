@@ -41,4 +41,3 @@ To avoid compiling the packages, you may download binaries with
 [![Build Status](https://travis-ci.com/smaret/nur-packages.svg?branch=master)](https://travis-ci.com/smaret/nur-packages)
 [![Cachix Cache](https://img.shields.io/badge/cachix-smaret-blue.svg)](https://smaret.cachix.org)
 
-
