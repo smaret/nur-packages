@@ -8,6 +8,7 @@
   astrochem = pkgs.python3Packages.toPythonModule (
     pkgs.callPackage ./pkgs/astrochem {
       pythonPackages = pkgs.python3Packages;
+      sundials = pkgs.callPackage ./pkgs/astrochem/dependencies/sundials5 { };
     }
   );
   # FIXME: This fails to build because aplpy in broken in nixpkgs
