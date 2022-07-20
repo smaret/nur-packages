@@ -13,8 +13,7 @@
   );
   lmfit = pkgs.python3Packages.callPackage ./pkgs/python-modules/lmfit { };
   pvextractor = pkgs.python3Packages.callPackage ./pkgs/python-modules/pvextractor { };
-  # FIXME: This fails to build because astroquery is broken in nixpkgs
-  #pyradex = pkgs.python3Packages.callPackage ./pkgs/python-modules/pyradex { };
+  pyradex = pkgs.python3Packages.callPackage ./pkgs/python-modules/pyradex { };
   mcfost = pkgs.callPackage ./pkgs/mcfost {
     sprng2 = pkgs.callPackage ./pkgs/mcfost/dependencies/sprng2 { };
     voro = pkgs.callPackage ./pkgs/mcfost/dependencies/voro { };
