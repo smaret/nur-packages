@@ -26,4 +26,8 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  meta = {
+    # Can't build because mcfost is broken.
+    broken = true;
+  };
 }
