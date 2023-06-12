@@ -38,14 +38,15 @@ stdenv.mkDerivation rec {
     echo "gag_doc:        $out/share/doc/" >> kernel/etc/gag.dico.lcl
   '';
 
+  userExec = "astro class greg imager mapping sic";
+
   postInstall=''
     mkdir -p $out/bin
     cp -a ../gildas-exe-${srcVersion}/* $out
     mv $out/$GAG_EXEC_SYSTEM $out/libexec
-    cp admin/wrapper.sh $out/bin/gildas-wrapper.sh
-    chmod 755 $out/bin/gildas-wrapper.sh
-    for i in $out/libexec/bin/* ; do
-      ln -s $out/bin/gildas-wrapper.sh $out/bin/$(basename "$i")
+    for i in ${userExec} ; do
+      cp admin/wrapper.sh $out/bin/$i
+      chmod 755 $out/bin/$i
     done
   '';
 
