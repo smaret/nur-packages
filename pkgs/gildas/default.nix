@@ -96,6 +96,8 @@ stdenv.mkDerivation (finalAttrs: {
     done
   '';
 
+  passthru.updateScript = ./update.py;
+
   meta = {
     description = "Radioastronomy data analysis software";
     longDescription = ''
