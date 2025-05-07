@@ -71,10 +71,6 @@ stdenv.mkDerivation (finalAttrs: {
   # Workaround for https://github.com/NixOS/nixpkgs/issues/304528
   env.GAG_CPP = if stdenv.hostPlatform.isDarwin then "${gfortran.outPath}/bin/cpp" else "cpp";
 
-  NIX_LDFLAGS = lib.optionalString stdenv.hostPlatform.isDarwin (
-    with darwin.apple_sdk.frameworks; "-F${CoreFoundation}/Library/Frameworks"
-  );
-
   postPatch = ''
     substituteInPlace utilities/main/gag-makedepend.pl --replace-fail '/usr/bin/perl' ${lib.getExe perl}
   '';
